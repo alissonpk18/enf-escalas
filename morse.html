@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora - Escala de Morse</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Escala de Risco de Queda de Morse</h1>
+    </header>
+
+    <main>
+        <div class="calculadora-container">
+            <form id="morse-form">
+                
+                <div class="form-group">
+                    <label>1. Histórico de quedas (nos últimos 3 meses)</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="historico" value="0" required checked> Não</label>
+                        <label><input type="radio" name="historico" value="25"> Sim</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>2. Diagnóstico secundário (≥ 2 diagnósticos médicos)</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="diagnostico" value="0" required checked> Não</label>
+                        <label><input type="radio" name="diagnostico" value="15"> Sim</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>3. Auxílio para deambular</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="auxilio" value="0" required checked> Nenhum / Acamado / Cadeira de rodas</label>
+                        <label><input type="radio" name="auxilio" value="15"> Muletas / Bengala / Andador</label>
+                        <label><input type="radio" name="auxilio" value="30"> Utiliza o mobiliário como apoio</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>4. Terapia endovenosa / Cateter heparinizado</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="terapia_ev" value="0" required checked> Não</label>
+                        <label><input type="radio" name="terapia_ev" value="20"> Sim</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>5. Marcha / Transferência</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="marcha" value="0" required checked> Normal / Acamado / Imóvel</label>
+                        <label><input type="radio" name="marcha" value="10"> Fraca</label>
+                        <label><input type="radio" name="marcha" value="20"> Comprometida / Cambaleante</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>6. Estado mental</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="mental" value="0" required checked> Orientado quanto à sua capacidade</label>
+                        <label><input type="radio" name="mental" value="15"> Superestima / Esquece suas limitações</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-calcular">Calcular Risco de Queda</button>
+            </form>
+
+            <div id="resultado">
+                </div>
+        </div>
+        <a href="index.html" class="link-voltar">← Voltar para a página inicial</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Enf-Escalas.</p>
+    </footer>
+
+    <script src="morse.js"></script>
+</body>
+</html>

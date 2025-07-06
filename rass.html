@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia - Escala RASS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Escala de Agitação e Sedação de Richmond (RASS)</h1>
+    </header>
+
+    <main>
+        <div class="escala-container">
+            <p class="escala-descricao">
+                Esta é uma ferramenta para avaliar o nível de agitação ou sedação de um paciente. Clique em uma linha para destacá-la.
+            </p>
+            <div class="tabela-container">
+                <table class="escala-tabela" id="rass-table">
+                    <thead>
+                        <tr>
+                            <th>Pontuação</th>
+                            <th>Termo</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-score="+4" class="zona-agitacao">
+                            <td>+4</td>
+                            <td>Combativo</td>
+                            <td>Agressivo, violento, risco imediato para a equipe.</td>
+                        </tr>
+                        <tr data-score="+3" class="zona-agitacao">
+                            <td>+3</td>
+                            <td>Muito Agitado</td>
+                            <td>Puxa ou remove tubos e cateteres; agressividade verbal.</td>
+                        </tr>
+                        <tr data-score="+2" class="zona-agitacao">
+                            <td>+2</td>
+                            <td>Agitado</td>
+                            <td>Movimentos não intencionais frequentes, briga com o ventilador.</td>
+                        </tr>
+                        <tr data-score="+1" class="zona-agitacao">
+                            <td>+1</td>
+                            <td>Inquieto</td>
+                            <td>Ansioso, mas sem movimentos agressivos ou vigorosos.</td>
+                        </tr>
+                        <tr data-score="0" class="zona-calma">
+                            <td>0</td>
+                            <td>Alerta e Calmo</td>
+                            <td>Paciente calmo e alerta.</td>
+                        </tr>
+                        <tr data-score="-1" class="zona-sedacao">
+                            <td>-1</td>
+                            <td>Sonolento</td>
+                            <td>Não totalmente alerta, mas desperta com estímulo verbal (contato visual > 10s).</td>
+                        </tr>
+                        <tr data-score="-2" class="zona-sedacao">
+                            <td>-2</td>
+                            <td>Sedação Leve</td>
+                            <td>Desperta com estímulo verbal (contato visual < 10s).</td>
+                        </tr>
+                        <tr data-score="-3" class="zona-sedacao">
+                            <td>-3</td>
+                            <td>Sedação Moderada</td>
+                            <td>Desperta com estímulo verbal, mas sem contato visual.</td>
+                        </tr>
+                        <tr data-score="-4" class="zona-sedacao">
+                            <td>-4</td>
+                            <td>Sedação Profunda</td>
+                            <td>Não responde ao estímulo verbal, mas responde ao estímulo físico/doloroso.</td>
+                        </tr>
+                        <tr data-score="-5" class="zona-sedacao">
+                            <td>-5</td>
+                            <td>Não Despertável</td>
+                            <td>Não responde a nenhum estímulo (verbal ou físico).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <a href="index.html" class="link-voltar">← Voltar para a página inicial</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Enf-Escalas.</p>
+    </footer>
+
+    <script src="rass.js"></script>
+</body>
+</html>

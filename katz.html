@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora - Índice de Katz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Índice de Katz de Independência nas Atividades da Vida Diária</h1>
+    </header>
+
+    <main>
+        <div class="calculadora-container">
+            <p class="escala-descricao">
+                Avalie a capacidade do paciente em realizar cada uma das atividades abaixo sem supervisão, direção ou assistência pessoal.
+            </p>
+            <form id="katz-form">
+                
+                <div class="form-group">
+                    <label>1. Tomar Banho</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="banho" value="0" required checked> Independente: toma banho sozinho ou precisa de ajuda apenas para lavar uma parte específica (ex: costas).</label>
+                        <label><input type="radio" name="banho" value="1"> Dependente: precisa de ajuda para mais de uma parte do corpo.</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>2. Vestir-se</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="vestir" value="0" required checked> Independente: pega as roupas e se veste sozinho, excluindo amarrar sapatos.</label>
+                        <label><input type="radio" name="vestir" value="1"> Dependente: não se veste sozinho ou permanece parcialmente despido.</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>3. Higiene Pessoal (Ir ao banheiro)</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="higiene" value="0" required checked> Independente: vai ao banheiro, se limpa e ajeita as roupas sem ajuda.</label>
+                        <label><input type="radio" name="higiene" value="1"> Dependente: usa comadre/compadre ou precisa de ajuda.</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>4. Transferência</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="transferencia" value="0" required checked> Independente: entra e sai da cama e de cadeiras sem ajuda.</label>
+                        <label><input type="radio" name="transferencia" value="1"> Dependente: precisa de ajuda para se mover da cama para a cadeira.</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>5. Continência</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="continencia" value="0" required checked> Independente: controle completo das esfíncteres.</label>
+                        <label><input type="radio" name="continencia" value="1"> Dependente: incontinência parcial ou total.</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>6. Alimentação</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="alimentacao" value="0" required checked> Independente: leva a comida do prato à boca sem ajuda.</label>
+                        <label><input type="radio" name="alimentacao" value="1"> Dependente: precisa de ajuda para se alimentar ou usa sondas.</label>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-calcular">Calcular Índice de Katz</button>
+            </form>
+
+            <div id="resultado">
+                </div>
+
+        </div>
+        <a href="index.html" class="link-voltar">← Voltar para a página inicial</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Enf-Escalas.</p>
+    </footer>
+
+    <script src="katz.js"></script>
+</body>
+</html>
