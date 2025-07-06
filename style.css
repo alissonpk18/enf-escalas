@@ -1,0 +1,299 @@
+/* ==========================================================================
+   1. Variáveis, Reset e Estilos Globais (Mobile-First)
+   ========================================================================== */
+:root {
+    --cor-primaria: #007bff;
+    --cor-primaria-escura: #0056b3;
+    --cor-foco: #0056b3; /* Cor para o anel de foco (acessibilidade) */
+    --cor-fundo: #f4f7f9;
+    --cor-card: #ffffff;
+    --cor-texto: #333333;
+    --cor-sombra: rgba(0, 0, 0, 0.1);
+
+    /* Cores de Resultado */
+    --cor-fundo-grave: #f8d7da;
+    --cor-texto-grave: #721c24;
+    --cor-fundo-moderado: #fff3cd;
+    --cor-texto-moderado: #856404;
+    --cor-fundo-leve: #d4edda;
+    --cor-texto-leve: #155724;
+}
+
+/* Reset básico e Box Sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Garante que unidades 'rem' sejam consistentes */
+html {
+    font-size: 100%; /* Geralmente 16px */
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    line-height: 1.6;
+}
+
+/* ==========================================================================
+   2. Layout Principal (Estilos Base para Celular)
+   ========================================================================== */
+header {
+    background-color: var(--cor-primaria);
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.8rem; /* Tamanho mais contido para celular */
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* ==========================================================================
+   3. Grade da Página Inicial (Uma coluna no celular)
+   ========================================================================== */
+.escala-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.escala-card {
+    background-color: var(--cor-card);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-decoration: none;
+    color: var(--cor-texto);
+    box-shadow: 0 4px 8px var(--cor-sombra);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.escala-card:hover,
+.escala-card:focus-visible {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px var(--cor-sombra);
+    outline: 2px solid var(--cor-foco);
+    outline-offset: 2px;
+}
+
+.escala-card h2 {
+    color: var(--cor-primaria);
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.escala-card.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    background-color: #e9ecef;
+}
+
+.escala-card.disabled:hover,
+.escala-card.disabled:focus-visible {
+    transform: none;
+    box-shadow: 0 4px 8px var(--cor-sombra);
+    outline: none;
+}
+
+/* ==========================================================================
+   4. Componentes e Formulários (Mobile-First)
+   ========================================================================== */
+.calculadora-container,
+.escala-container {
+    padding: 1.5rem;
+    background-color: var(--cor-card);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--cor-sombra);
+    margin-top: 1rem;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+}
+
+.form-group select,
+.form-group input[type="number"],
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 1rem; /* Padding generoso para toque */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem; /* Evita zoom automático no iOS */
+    background-color: #fff;
+    color: var(--cor-texto);
+}
+
+.form-group select:focus-visible,
+.form-group input:focus-visible {
+    outline: 2px solid var(--cor-foco);
+    outline-offset: 1px;
+    border-color: var(--cor-primaria);
+}
+
+.btn-calcular {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    background-color: var(--cor-primaria);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    min-height: 50px; /* Altura mínima para área de toque */
+}
+
+.btn-calcular:hover,
+.btn-calcular:focus-visible {
+    background-color: var(--cor-primaria-escura);
+    outline: 2px solid var(--cor-foco);
+    outline-offset: 2px;
+}
+
+/* Classe opcional para fixar o botão de ação no rodapé em telas pequenas */
+.sticky-footer-action {
+    position: sticky;
+    bottom: 0;
+    padding: 1rem;
+    background: linear-gradient(to top, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0));
+    margin: 1.5rem -1rem -1rem; /* Ajusta para sangrar nas laterais do container */
+}
+
+
+/* ==========================================================================
+   5. Componentes Específicos (Tabelas, Escala de Dor)
+   ========================================================================== */
+
+/* --- Tabela RASS --- */
+.tabela-container {
+    overflow-x: auto; /* Permite rolagem horizontal da tabela */
+}
+
+.escala-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.escala-tabela th,
+.escala-tabela td {
+    padding: 1rem 0.75rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.escala-tabela tbody tr {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.escala-tabela tbody tr:hover,
+.escala-tabela tbody tr:focus-visible {
+    background-color: rgba(0, 123, 255, 0.1);
+    outline: none; /* O highlight já é o suficiente */
+}
+
+.escala-tabela tbody tr.selected {
+    background-color: var(--cor-primaria);
+    color: white;
+    font-weight: bold;
+}
+
+/* --- Escala de Dor --- */
+.pain-level {
+    width: 50px;   /* Ligeiramente menor para caber mais na tela */
+    height: 50px;
+    font-size: 1.3rem;
+}
+
+.pain-level:focus-visible {
+    outline: 2px solid var(--cor-foco);
+    outline-offset: 2px;
+}
+
+/* ==========================================================================
+   6. Divs de Resultado
+   ========================================================================== */
+#resultado {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.5rem;
+    display: none; /* Oculto por padrão, ativado via JS */
+}
+
+.resultado-grave  { background-color: var(--cor-fundo-grave);  color: var(--cor-texto-grave); }
+.resultado-medio { background-color: var(--cor-fundo-moderado); color: var(--cor-texto-moderado); }
+.resultado-leve   { background-color: var(--cor-fundo-leve);   color: var(--cor-texto-leve); }
+
+/* ==========================================================================
+   7. Media Queries (Estilos para telas maiores - TABLET & UP)
+   ========================================================================== */
+@media (min-width: 768px) {
+    /* Ajustes gerais de layout */
+    main {
+        padding: 2rem 1.5rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem; /* Retorna ao tamanho original */
+    }
+
+    /* A grade agora terá várias colunas */
+    .escala-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+
+    /* Contêineres com mais espaço */
+    .calculadora-container,
+    .escala-container {
+        padding: 2rem;
+        margin-top: 2rem;
+    }
+    
+    /* Desativa o botão fixo em telas maiores */
+    .sticky-footer-action {
+        position: static;
+        padding: 0;
+        background: none;
+        margin: 0;
+        margin-top: 1.5rem; /* Adiciona margem normal */
+    }
+}
+
+/* ==========================================================================
+   8. Media Queries (Estilos para telas grandes - DESKTOP & UP)
+   ========================================================================== */
+@media (min-width: 1200px) {
+    .calculadora-container,
+    .escala-container {
+        padding: 2.5rem;
+    }
+}

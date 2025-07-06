@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora - Escala de Glasgow</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .calculadora-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: var(--cor-card);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px var(--cor-sombra);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        .btn-calcular {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: white;
+            background-color: var(--cor-primaria);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .btn-calcular:hover {
+            background-color: #0056b3;
+        }
+        #resultado {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 1.5rem;
+            display: none; /* O resultado só aparece depois do cálculo */
+        }
+        .resultado-grave { background-color: #f8d7da; color: #721c24; }
+        .resultado-moderado { background-color: #fff3cd; color: #856404; }
+        .resultado-leve { background-color: #d4edda; color: #155724; }
+        .link-voltar {
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Escala de Coma de Glasgow</h1>
+    </header>
+
+    <main>
+        <div class="calculadora-container">
+            <form id="glasgow-form">
+                <div class="form-group">
+                    <label for="ocular">Resposta Ocular (O)</label>
+                    <select id="ocular" required>
+                        <option value="4">4 - Espontânea</option>
+                        <option value="3">3 - Ao comando de voz</option>
+                        <option value="2">2 - À pressão</option>
+                        <option value="1">1 - Nenhuma</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="verbal">Resposta Verbal (V)</label>
+                    <select id="verbal" required>
+                        <option value="5">5 - Orientado</option>
+                        <option value="4">4 - Confuso</option>
+                        <option value="3">3 - Palavras</option>
+                        <option value="2">2 - Sons</option>
+                        <option value="1">1 - Nenhuma</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="motora">Resposta Motora (M)</label>
+                    <select id="motora" required>
+                        <option value="6">6 - Obedece a comandos</option>
+                        <option value="5">5 - Localiza a dor</option>
+                        <option value="4">4 - Retirada inespecífica (flexão normal)</option>
+                        <option value="3">3 - Flexão anormal (decorticação)</option>
+                        <option value="2">2 - Extensão anormal (descerebração)</option>
+                        <option value="1">1 - Nenhuma</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-calcular">Calcular Pontuação</button>
+            </form>
+
+            <div id="resultado">
+                </div>
+        </div>
+        <a href="index.html" class="link-voltar">← Voltar para a página inicial</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Enf-Escalas.</p>
+    </footer>
+
+    <script src="glasgow.js"></script>
+</body>
+</html>
