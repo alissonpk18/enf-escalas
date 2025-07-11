@@ -3,54 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Calculadoras e escalas de enfermagem baseadas em evidências. Ferramentas essenciais para avaliação de pacientes, como Braden, Glasgow, Morse, RASS e mais.">
+    <meta name="theme-color" content="#008080">
+    
     <title>Enf-Escalas - Ferramentas de Enfermagem</title>
+    
     <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
 </head>
 <body>
 
     <header>
-        <h1>Enf-Escalas</h1>
-        <p>Suas ferramentas de avaliação de enfermagem, baseadas em evidências. Criado por Alisson</p>
+        <div class="header-content">
+            <h1>Enf-Escalas</h1>
+            <p>Suas ferramentas de avaliação de enfermagem, baseadas em evidências.</p>
+        </div>
+        <div class="header-controls">
+            <button id="dark-mode-toggle" aria-label="Alternar modo noturno">🌙</button>
+        </div>
     </header>
 
     <main>
         <section class="escala-grid">
+            <div class="escala-card" data-title="Escala de Glasgow Nível Consciência">
+                <a href="glasgow.html" class="card-link" aria-label="Abrir Escala de Glasgow"></a>
+                <h2>Escala de Glasgow</h2>
+                <p>Mede o nível de consciência.</p>
+                <button class="info-btn" data-info-id="glasgow-info" aria-label="Mais informações sobre Escala de Glasgow">i</button>
+            </div>
             
-	<a href="glasgow.html" class="escala-card">
-    		<h2>Escala de Glasgow</h2>
-    		<p>Mede o nível de consciência.</p>
-	
-	<a href="rass.html" class="escala-card">
-	    <h2>Escala RASS</h2>
-	    <p>Avalia o nível de agitação e sedação.</p>
-	</a>
+            <div class="escala-card" data-title="Escala de Braden Lesão Pressão LPP">
+                <a href="braden.html" class="card-link" aria-label="Abrir Escala de Braden"></a>
+                <h2>Escala de Braden</h2>
+                <p>Avalia o risco para Lesão por Pressão.</p>
+                <button class="info-btn" data-info-id="braden-info" aria-label="Mais informações sobre Escala de Braden">i</button>
+            </div>
 
-	<a href="morse.html" class="escala-card">
-  	  <h2>Escala de Morse</h2>
-   	  <p>Avalia o risco de quedas.</p>
-	</a>
+            <div class="escala-card" data-title="Escala de Morse Risco Quedas">
+                <a href="morse.html" class="card-link" aria-label="Abrir Escala de Morse"></a>
+                <h2>Escala de Morse</h2>
+                <p>Avalia o risco de quedas.</p>
+                <button class="info-btn" data-info-id="morse-info" aria-label="Mais informações sobre Escala de Morse">i</button>
+            </div>
 
+            <div class="escala-card" data-title="Escala RASS Agitação Sedação Richmond">
+                <a href="rass.html" class="card-link" aria-label="Abrir Escala RASS"></a>
+                <h2>Escala RASS</h2>
+                <p>Avalia o nível de agitação e sedação.</p>
+                <button class="info-btn" data-info-id="rass-info" aria-label="Mais informações sobre Escala RASS">i</button>
+            </div>
+        </section>
 
-            <a href="dor.html" class="escala-card">
-    		<h2>Escala de Dor</h2>
-    		<p>Mensura a intensidade da dor referida.</p>
-	    </a>
+        <hr class="section-divider">
+
+        <section class="escala-grid">
+            <div class="escala-card" data-title="Escala MEWS Sinais Alerta Deterioração Clínica">
+                <a href="mews.html" class="card-link" aria-label="Abrir Escala MEWS"></a>
+                <h2>Escala MEWS</h2>
+                <p>Reconhece sinais de deterioração clínica.</p>
+                <button class="info-btn" data-info-id="mews-info" aria-label="Mais informações sobre Escala MEWS">i</button>
+            </div>
+
+            <div class="escala-card" data-title="Escala de Dor Intensidade Numérica Visual">
+                <a href="dor.html" class="card-link" aria-label="Abrir Escala de Dor"></a>
+                <h2>Escala de Dor</h2>
+                <p>Mensura a intensidade da dor referida.</p>
+                <button class="info-btn" data-info-id="dor-info" aria-label="Mais informações sobre Escala de Dor">i</button>
+            </div>
+
+            <div class="escala-card" data-title="Avaliação de Delirium CAM-ICU 4AT UTI Enfermaria">
+                <a href="delirium.html" class="card-link" aria-label="Abrir Avaliação de Delirium"></a>
+                <h2>Avaliação de Delirium</h2>
+                <p>Rastreio com CAM-ICU e 4AT.</p>
+                <button class="info-btn" data-info-id="delirium-info" aria-label="Mais informações sobre Avaliação de Delirium">i</button>
+            </div>
+
+            <div class="escala-card" data-title="Índice de Katz Atividades Diárias AVD">
+                <a href="katz.html" class="card-link" aria-label="Abrir Índice de Katz"></a>
+                <h2>Índice de Katz</h2>
+                <p>Avalia a capacidade para atividades diárias.</p>
+                <button class="info-btn" data-info-id="katz-info" aria-label="Mais informações sobre Índice de Katz">i</button>
+            </div>
             
-            <a href="mews.html" class="escala-card">
-    		<h2>Escala MEWS</h2>
-    		<p>Reconhece sinais de deterioração clínica.</p>
-	    </a>
-
-	<a href="katz.html" class="escala-card">
-    		<h2>Índice de Katz</h2>
-	       <p>Avalia a capacidade para atividades diárias.</p>
-	</a>
+            <div class="escala-card" data-title="Índice de Charlson Prognóstico Comorbidades">
+                <a href="charlson.html" class="card-link" aria-label="Abrir Índice de Charlson"></a>
+                <h2>Índice de Charlson</h2>
+                <p>Avalia o prognóstico baseado em comorbidades.</p>
+                <button class="info-btn" data-info-id="charlson-info" aria-label="Mais informações sobre Índice de Charlson">i</button>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Enf-Escalas. Desenvolvido para auxiliar profissionais da saúde.</p>
+        <p>&copy; 2025 Enf-Escalas. Ferramenta de apoio à prática clínica para profissionais qualificados.</p>
     </footer>
+
+    <div id="info-modal" class="modal-overlay" aria-modal="true" role="dialog" style="display: none;">
+        <div class="modal-content">
+            <button id="modal-close-btn" class="modal-close" aria-label="Fechar">&times;</button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    
+    <div id="info-content" style="display: none;">
+        <div id="glasgow-info">
+            <h3>Sobre a Escala de Glasgow</h3>
+            <p>A Escala de Coma de Glasgow é uma ferramenta neurológica que visa medir o nível de consciência de uma pessoa após uma lesão cerebral aguda.</p>
+            <p><strong>Referência:</strong> Teasdale G, Jennett B. ASSESSMENT OF COMA AND IMPAIRED CONSCIOUSNESS. A practical scale. The Lancet. 1974;304(7872):81-84.</p>
+        </div>
+        <div id="braden-info">
+            <h3>Sobre a Escala de Braden</h3>
+            <p>A Escala de Braden é uma ferramenta utilizada para avaliar o risco de um paciente desenvolver lesões por pressão.</p>
+            <p><strong>Referência:</strong> Bergstrom N, Braden BJ, Laguzza A, Holman V. The Braden Scale for Predicting Pressure Sore Risk. Nursing Research. 1987;36(4):205-210.</p>
+        </div>
+        </div>
 
     <script src="script.js"></script>
 </body>
