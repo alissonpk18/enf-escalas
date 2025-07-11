@@ -1,0 +1,150 @@
+
+
+/* --- Container Principal da Calculadora --- */
+.calculadora-container {
+    padding: 1.5rem;
+    background-color: var(--cor-card);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--cor-sombra);
+    margin-top: 1rem;
+}
+
+@media (min-width: 768px) {
+    .calculadora-container {
+        padding: 2.5rem;
+    }
+}
+
+/* --- Grupos de Formulário --- */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.75rem;
+    font-weight: bold;
+    color: var(--cor-texto);
+}
+
+.form-group select,
+.form-group input[type="number"],
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.form-group select:focus,
+.form-group input:focus {
+    outline: 2px solid var(--cor-foco);
+    border-color: var(--cor-primaria);
+}
+
+/* --- Botões de Ação --- */
+.btn-calcular,
+.btn-recalcular {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    min-height: 50px;
+}
+
+.btn-calcular {
+    background-color: var(--cor-primaria);
+}
+
+.btn-calcular:hover {
+    background-color: var(--cor-primaria-escura);
+}
+
+.btn-recalcular {
+    background-color: #6c757d; /* Cinza secundário */
+    margin-top: 1rem;
+}
+
+.btn-recalcular:hover {
+    background-color: #5a6268;
+}
+
+/* --- Div de Resultado --- */
+#resultado {
+    margin-top: 2rem;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 1.2rem;
+    display: none; /* Oculto por padrão, ativado via JS */
+}
+
+#resultado strong {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Cores de fundo do resultado (harmonizadas com o tema) */
+.resultado-grave, .resultado-alto {
+    background-color: #fdd8d8;
+    color: #9b2c2c;
+}
+.resultado-moderado, .resultado-medio {
+    background-color: #fefcbf;
+    color: #975a16;
+}
+.resultado-leve, .resultado-baixo {
+    background-color: #c6f6d5;
+    color: #2f855a;
+}
+
+/* --- Tabela (para RASS, etc.) --- */
+.tabela-container {
+    overflow-x: auto; /* Permite rolagem horizontal em telas pequenas */
+}
+
+.escala-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.escala-tabela th,
+.escala-tabela td {
+    padding: 1rem 0.75rem;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.escala-tabela tbody tr {
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.escala-tabela tbody tr:hover {
+    background-color: rgba(0, 128, 128, 0.1);
+}
+
+.escala-tabela tbody tr.selected {
+    background-color: var(--cor-primaria);
+    color: white;
+    font-weight: bold;
+}
+
+body.dark-mode .escala-tabela tbody tr.selected {
+    color: #1a202c; /* Texto escuro no highlight claro */
+}
+
+body.dark-mode .escala-tabela th,
+body.dark-mode .escala-tabela td {
+    border-bottom: 1px solid #4a5568;
+}

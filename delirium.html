@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enf-Escalas - Avaliação de Delirium</title>
+    <link rel="stylesheet" href="style.css">
+       <link rel="stylesheet" href="calculadoras.css">
+</head>
+<body>
+
+    <header>
+        <h1>Enf-Escalas</h1>
+        <p>Suas ferramentas de avaliação de enfermagem, baseadas em evidências.</p>
+    </header>
+
+    <main>
+        <div class="escala-container">
+            <div id="choice-container">
+                <h2>Avaliação de Delirium</h2>
+                <p>Selecione a ferramenta apropriada para o seu ambiente clínico.</p>
+                <div class="choice-buttons">
+                    <button id="show-4at" class="choice-btn">4AT (Enfermaria/Emergência)</button>
+                    <button id="show-cam-icu" class="choice-btn">CAM-ICU (UTI)</button>
+                </div>
+            </div>
+
+            <div id="calculator-4at" style="display: none;">
+                <h3>Escala 4AT</h3>
+                <p>Teste rápido de 4 pontos para rastreio de delirium.</p>
+                <form id="form-4at">
+                    <div class="form-group">
+                        <label for="item1-alerta">1. Alerta</label>
+                        <select id="item1-alerta">
+                            <option value="0">Normal (Alerta e calmo)</option>
+                            <option value="0">Sonolento, mas desperta com a voz</option>
+                            <option value="4">Claramente anormal (agitado ou sonolento)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="item2-amt4">2. AMT4 (Orientação)</label>
+                        <select id="item2-amt4">
+                            <option value="0">Nenhum erro (sabe idade, data de nasc., local, ano)</option>
+                            <option value="1">1 erro</option>
+                            <option value="2">2 ou mais erros / Intestável</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="item3-atencao">3. Atenção (Meses do ano de trás para frente)</label>
+                        <select id="item3-atencao">
+                            <option value="0">Consegue citar 7 ou mais meses</option>
+                            <option value="1">Inicia, mas não completa 7 meses</option>
+                            <option value="2">Recusa-se a fazer / Intestável</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="item4-mudanca-aguda">4. Mudança Aguda ou Flutuação</label>
+                        <select id="item4-mudanca-aguda">
+                            <option value="4">Sim (evidência de mudança no alerta/cognição)</option>
+                            <option value="0">Não</option>
+                        </select>
+                    </div>
+                    <div class="sticky-footer-action">
+                        <button type="button" class="btn-calcular" id="calcular-4at">Calcular Escore 4AT</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="calculator-cam-icu" style="display: none;">
+                <h3>Algoritmo CAM-ICU</h3>
+                <p>Avaliação de delirium para pacientes em Terapia Intensiva.</p>
+                <form id="form-cam-icu">
+                    <div class="form-group">
+                        <label>1. Início Agudo ou Curso Flutuante?</label>
+                        <select id="cam-feature1">
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>2. Desatenção? (Ex: Errou mais de 2x ao apertar a mão na letra "A")</label>
+                        <select id="cam-feature2">
+                            <option value="1">Sim</option>
+                            <option value="0">Não</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>3. Nível de Consciência Alterado? (Qualquer RASS diferente de 0)</label>
+                         <select id="cam-feature3">
+                            <option value="1">Sim</option>
+                            <option value="0">Não (RASS = 0)</option>
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        <label>4. Pensamento Desorganizado?</label>
+                         <select id="cam-feature4">
+                            <option value="1">Sim (Errou mais de 1x nas perguntas de comando)</option>
+                            <option value="0">Não</option>
+                        </select>
+                    </div>
+                    <div class="sticky-footer-action">
+                        <button type="button" class="btn-calcular" id="verificar-cam-icu">Verificar Resultado</button>
+                    </div>
+                </form>
+            </div>
+            
+            <div id="resultado" style="display: none;">
+                <div id="resultado-texto"></div>
+                <button type="button" class="btn-recalcular" id="voltar-escolha">Avaliar Novamente</button>
+            </div>
+        </div>
+        <a href="index.html" class="link-voltar">← Voltar para a página inicial</a>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Enf-Escalas. Desenvolvido para auxiliar profissionais da saúde...</p>
+    </footer>
+    
+    <script src="delirium.js"></script>
+</body>
+</html>
