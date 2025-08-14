@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora - Índice de Katz</title>
     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="calculadoras.css">
+    <link rel="stylesheet" href="calculadoras.css">
 </head>
 <body>
 
     <header>
-        <h1>Índice de Katz de Independência nas Atividades da Vida Diária</h1>
+        <div class="header-content">
+            <h1>Enf-Escalas</h1>
+            <p>Suas ferramentas de avaliação de enfermagem, baseadas em evidências.</p>
+        </div>
+        <div class="header-controls">
+            <button id="dark-mode-toggle" aria-label="Alternar modo noturno">🌙</button>
+        </div>
     </header>
 
     <main>
         <div class="calculadora-container">
+            <h2>Índice de Katz</h2>
             <p class="escala-descricao">
                 Avalie a capacidade do paciente em realizar cada uma das atividades abaixo sem supervisão, direção ou assistência pessoal.
             </p>
@@ -82,6 +89,7 @@
         <p>&copy; 2025 Enf-Escalas.</p>
     </footer>
 
+    <script src="script.js"></script>
     <script src="katz.js"></script>
 </body>
 </html>

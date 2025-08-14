@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ferramenta - Escala de Dor</title>
     <link rel="stylesheet" href="style.css">
-       <link rel="stylesheet" href="calculadoras.css">
+    <link rel="stylesheet" href="calculadoras.css">
 </head>
 <body>
 
     <header>
-        <h1>Escala Visual Numérica de Dor (EVN)</h1>
+        <div class="header-content">
+            <h1>Enf-Escalas</h1>
+            <p>Suas ferramentas de avaliação de enfermagem, baseadas em evidências.</p>
+        </div>
+        <div class="header-controls">
+            <button id="dark-mode-toggle" aria-label="Alternar modo noturno">🌙</button>
+        </div>
     </header>
 
     <main>
-        <div class="escala-container">
+        <div class="calculadora-container">
+            <h2>Escala Visual Numérica de Dor (EVN)</h2>
             <p class="escala-descricao">
                 Selecione o número que melhor representa a intensidade da dor do paciente.
             </p>
@@ -34,6 +41,7 @@
         <p>&copy; 2025 Enf-Escalas.</p>
     </footer>
 
+    <script src="script.js"></script>
     <script src="dor.js"></script>
 </body>
 </html>

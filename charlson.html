@@ -5,43 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Índice de Charlson - Enf-Escalas</title>
     <link rel="stylesheet" href="style.css">
-       <link rel="stylesheet" href="calculadoras.css">
-
-    <style>
-        /* Estilo adicional para organizar os checkboxes em colunas em telas maiores */
-        .comorbidities-grid {
-            display: grid;
-            gap: 0.5rem 1.5rem;
-        }
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem; /* Espaçamento entre o checkbox e o texto */
-            padding: 0.5rem 0;
-        }
-        .checkbox-item input[type="checkbox"] {
-            width: auto; /* Remove a largura de 100% dos checkboxes */
-            flex-shrink: 0;
-        }
-
-        @media (min-width: 768px) {
-            .comorbidities-grid {
-                grid-template-columns: 1fr 1fr; /* Duas colunas em tablets e desktops */
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="calculadoras.css">
 </head>
 <body>
 
     <header>
-        <h1>Enf-Escalas</h1>
-        <p>Índice de Comorbidade de Charlson</p>
+        <div class="header-content">
+            <h1>Enf-Escalas</h1>
+            <p>Suas ferramentas de avaliação de enfermagem, baseadas em evidências.</p>
+        </div>
+        <div class="header-controls">
+            <button id="dark-mode-toggle" aria-label="Alternar modo noturno">🌙</button>
+        </div>
     </header>
 
     <main>
         <div class="calculadora-container">
-            <h2>Calculadora do Índice de Charlson</h2>
-            <p>Selecione a idade e as comorbidades do paciente para calcular o índice e estimar a sobrevida em 10 anos.</p>
+            <h2>Índice de Charlson</h2>
+            <p class="escala-descricao">Selecione a idade e as comorbidades do paciente para calcular o índice e estimar a sobrevida em 10 anos.</p>
             
             <form id="charlson-form" novalidate>
                 
@@ -84,13 +65,14 @@
 
             <div id="resultado" style="display: none;"></div>
         </div>
-<a href="index.html" class="link-voltar">← Voltar para a página inicial</a>
+        <a href="index.html" class="link-voltar">← Voltar para a página inicial</a>
     </main>
 
     <footer>
         <p>&copy; 2025 Enf-Escalas. Desenvolvido para auxiliar profissionais da saúde.</p>
     </footer>
 
+    <script src="script.js"></script>
     <script src="charlson.js"></script>
 </body>
 </html>
