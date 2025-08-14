@@ -10,12 +10,17 @@
 <body>
 
     <header>
-        <h1>Enf-Escalas</h1>
-        <p>Suas ferramentas de avaliação de enfermagem, baseadas em evidências.</p>
+        <div class="header-content">
+            <h1>Enf-Escalas</h1>
+            <p>Suas ferramentas de avaliação de enfermagem, baseadas em evidências.</p>
+        </div>
+        <div class="header-controls">
+            <button id="dark-mode-toggle" aria-label="Alternar modo noturno">🌙</button>
+        </div>
     </header>
 
     <main>
-        <div class="escala-container">
+        <div class="calculadora-container">
             <div id="choice-container">
                 <h2>Avaliação de Delirium</h2>
                 <p>Selecione a ferramenta apropriada para o seu ambiente clínico.</p>
@@ -115,7 +120,8 @@
     <footer>
         <p>&copy; 2025 Enf-Escalas. Desenvolvido para auxiliar profissionais da saúde...</p>
     </footer>
-    
+
+    <script src="script.js"></script>
     <script src="delirium.js"></script>
 </body>
 </html>

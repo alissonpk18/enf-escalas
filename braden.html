@@ -5,17 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enf-Escalas - Escala de Braden</title>
     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="calculadoras.css">
+    <link rel="stylesheet" href="calculadoras.css">
 </head>
 <body>
 
     <header>
-        <h1>Enf-Escalas</h1>
-        <p>Suas ferramentas de avaliação de enfermagem, baseadas em evidências.</p>
+        <div class="header-content">
+            <h1>Enf-Escalas</h1>
+            <p>Suas ferramentas de avaliação de enfermagem, baseadas em evidências.</p>
+        </div>
+        <div class="header-controls">
+            <button id="dark-mode-toggle" aria-label="Alternar modo noturno">🌙</button>
+        </div>
     </header>
 
     <main>
-        <div class="escala-container">
+        <div class="calculadora-container">
             <h2>Escala de Braden</h2>
             <p>Avalia o risco do paciente para desenvolvimento de Lesão por Pressão (LPP).</p>
 
@@ -104,6 +109,8 @@
     <footer>
         <p>&copy; 2025 Enf-Escalas. Desenvolvido para auxiliar profissionais da saúde...</p>
     </footer>
-<script src="braden.js"></script>
-    </body>
+
+    <script src="script.js"></script>
+    <script src="braden.js"></script>
+</body>
 </html>

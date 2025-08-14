@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora - Escala MEWS</title>
     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="calculadoras.css">
+    <link rel="stylesheet" href="calculadoras.css">
 </head>
 <body>
 
     <header>
-        <h1>Calculadora da Escala MEWS</h1>
+        <div class="header-content">
+            <h1>Enf-Escalas</h1>
+            <p>Suas ferramentas de avaliação de enfermagem, baseadas em evidências.</p>
+        </div>
+        <div class="header-controls">
+            <button id="dark-mode-toggle" aria-label="Alternar modo noturno">🌙</button>
+        </div>
     </header>
 
     <main>
         <div class="calculadora-container">
+            <h2>Escala MEWS</h2>
             <p class="escala-descricao">
                 Insira os parâmetros fisiológicos do paciente para calcular o escore de alerta precoce.
             </p>
@@ -64,6 +71,7 @@
         <p>&copy; 2025 Enf-Escalas.</p>
     </footer>
 
+    <script src="script.js"></script>
     <script src="mews.js"></script>
 </body>
 </html>

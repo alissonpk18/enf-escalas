@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora - Escala de Morse</title>
     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="calculadoras.css">
+    <link rel="stylesheet" href="calculadoras.css">
 </head>
 <body>
 
     <header>
-        <h1>Escala de Risco de Queda de Morse</h1>
+        <div class="header-content">
+            <h1>Enf-Escalas</h1>
+            <p>Suas ferramentas de avaliação de enfermagem, baseadas em evidências.</p>
+        </div>
+        <div class="header-controls">
+            <button id="dark-mode-toggle" aria-label="Alternar modo noturno">🌙</button>
+        </div>
     </header>
 
     <main>
         <div class="calculadora-container">
+            <h2>Escala de Morse</h2>
             <form id="morse-form">
                 
                 <div class="form-group">
@@ -80,6 +87,7 @@
         <p>&copy; 2025 Enf-Escalas.</p>
     </footer>
 
+    <script src="script.js"></script>
     <script src="morse.js"></script>
 </body>
 </html>
