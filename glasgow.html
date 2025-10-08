@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora - Escala de Glasgow</title>
-    <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="calculadoras.css">
+     <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="calculadoras.css">
     <style>
         .calculadora-container {
             max-width: 800px;
@@ -64,11 +64,9 @@
     </style>
 </head>
 <body>
-
     <header>
         <h1>Escala de Coma de Glasgow</h1>
     </header>
-
     <main>
         <div class="calculadora-container">
             <form id="glasgow-form">
@@ -81,7 +79,6 @@
                         <option value="1">1 - Nenhuma</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="verbal">Resposta Verbal (V)</label>
                     <select id="verbal" required>
@@ -92,7 +89,6 @@
                         <option value="1">1 - Nenhuma</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="motora">Resposta Motora (M)</label>
                     <select id="motora" required>
@@ -104,20 +100,17 @@
                         <option value="1">1 - Nenhuma</option>
                     </select>
                 </div>
-
-                <button type="submit" class="btn-calcular">Calcular Pontuação</button>
+                <button class="btn-calcular" type="submit">Calcular Pontuação</button>
             </form>
-
             <div id="resultado">
                 </div>
         </div>
-        <a href="index.html" class="link-voltar">← Voltar para a página inicial</a>
+        <a class="link-voltar" href="index.html">← Voltar para a página inicial</a>
     </main>
-
     <footer>
-        <p>&copy; 2025 Enf-Escalas.</p>
+        © 2025 Enf-Escalas.
     </footer>
-
     <script src="glasgow.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
