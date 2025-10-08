@@ -5,20 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enf-Escalas - Escala de Braden</title>
     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="calculadoras.css">
+    <link rel="stylesheet" href="calculadoras.css">
 </head>
 <body>
-
     <header>
         <h1>Enf-Escalas</h1>
         <p>Suas ferramentas de avaliação de enfermagem, baseadas em evidências.</p>
     </header>
-
     <main>
         <div class="escala-container">
             <h2>Escala de Braden</h2>
             <p>Avalia o risco do paciente para desenvolvimento de Lesão por Pressão (LPP).</p>
-
             <form id="braden-form" class="calculadora-form">
                 
                 <div class="form-group">
@@ -31,7 +28,6 @@
                         <option value="4">4 - Nenhuma Limitação</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="umidade">2. Umidade</label>
                     <select id="umidade" name="umidade" required>
@@ -42,7 +38,6 @@
                         <option value="4">4 - Raramente Molhado</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="atividade">3. Atividade</label>
                     <select id="atividade" name="atividade" required>
@@ -53,7 +48,6 @@
                         <option value="4">4 - Deambula Frequentemente</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="mobilidade">4. Mobilidade</label>
                     <select id="mobilidade" name="mobilidade" required>
@@ -64,7 +58,6 @@
                         <option value="4">4 - Nenhuma Limitação</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="nutricao">5. Nutrição</label>
                     <select id="nutricao" name="nutricao" required>
@@ -75,7 +68,6 @@
                         <option value="4">4 - Excelente</option>
                     </select>
                 </div>
-
                 <div class="form-group">
                     <label for="friccao_cisalhamento">6. Fricção e Cisalhamento</label>
                     <select id="friccao_cisalhamento" name="friccao_cisalhamento" required>
@@ -85,25 +77,22 @@
                         <option value="3">3 - Sem Problema Aparente</option>
                     </select>
                 </div>
-
                 <div class="sticky-footer-action">
-                    <button type="button" class="btn-calcular" id="calcular-braden">Calcular Risco</button>
+                    <button class="btn-calcular" id="calcular-braden" type="button">Calcular Risco</button>
                 </div>
             </form>
-
             <div id="resultado" style="display: none;">
                 <div id="resultado-texto">
                     </div>
-                <button type="button" class="btn-recalcular" id="recalcular-braden" style="display: none;">Calcular Novamente</button>
+                <button class="btn-recalcular" id="recalcular-braden" style="display: none;" type="button">Calcular Novamente</button>
             </div>
-
         </div>
-        <a href="index.html" class="link-voltar">← Voltar para a página inicial</a>
+        <a class="link-voltar" href="index.html">← Voltar para a página inicial</a>
     </main>
-
     <footer>
-        <p>&copy; 2025 Enf-Escalas. Desenvolvido para auxiliar profissionais da saúde...</p>
+        © 2025 Enf-Escalas. Desenvolvido para auxiliar profissionais da saúde...
     </footer>
-<script src="braden.js"></script>
-    </body>
+    <script src="braden.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
