@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora - Índice de Katz</title>
     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="calculadoras.css">
+     <link rel="stylesheet" href="calculadoras.css"> 
 </head>
 <body>
-
     <header>
         <h1>Índice de Katz de Independência nas Atividades da Vida Diária</h1>
     </header>
-
     <main>
         <div class="calculadora-container">
             <p class="escala-descricao">
@@ -27,7 +25,6 @@
                         <label><input type="radio" name="banho" value="1"> Dependente: precisa de ajuda para mais de uma parte do corpo.</label>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label>2. Vestir-se</label>
                     <div class="radio-group">
@@ -35,7 +32,6 @@
                         <label><input type="radio" name="vestir" value="1"> Dependente: não se veste sozinho ou permanece parcialmente despido.</label>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label>3. Higiene Pessoal (Ir ao banheiro)</label>
                     <div class="radio-group">
@@ -43,7 +39,6 @@
                         <label><input type="radio" name="higiene" value="1"> Dependente: usa comadre/compadre ou precisa de ajuda.</label>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label>4. Transferência</label>
                     <div class="radio-group">
@@ -51,7 +46,6 @@
                         <label><input type="radio" name="transferencia" value="1"> Dependente: precisa de ajuda para se mover da cama para a cadeira.</label>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label>5. Continência</label>
                     <div class="radio-group">
@@ -59,7 +53,6 @@
                         <label><input type="radio" name="continencia" value="1"> Dependente: incontinência parcial ou total.</label>
                     </div>
                 </div>
-
                 <div class="form-group">
                     <label>6. Alimentação</label>
                     <div class="radio-group">
@@ -67,21 +60,18 @@
                         <label><input type="radio" name="alimentacao" value="1"> Dependente: precisa de ajuda para se alimentar ou usa sondas.</label>
                     </div>
                 </div>
-
                 <button type="submit" class="btn-calcular">Calcular Índice de Katz</button>
             </form>
-
             <div id="resultado">
-                </div>
-
+                <!-- Resultado dinâmico aparece aqui via JS -->
+            </div>
         </div>
         <a href="index.html" class="link-voltar">← Voltar para a página inicial</a>
     </main>
-
     <footer>
-        <p>&copy; 2025 Enf-Escalas.</p>
+        © 2025 Enf-Escalas.
     </footer>
-
     <script src="katz.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
