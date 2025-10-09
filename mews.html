@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculadora - Escala MEWS</title>
     <link rel="stylesheet" href="style.css">
-     <link rel="stylesheet" href="calculadoras.css">
+     <link rel="stylesheet" href="calculadoras.css"> 
 </head>
 <body>
-
     <header>
         <h1>Calculadora da Escala MEWS</h1>
     </header>
-
     <main>
         <div class="calculadora-container">
             <p class="escala-descricao">
@@ -24,22 +22,18 @@
                     <label for="pa-sistolica">Pressão Arterial Sistólica (mmHg)</label>
                     <input type="number" id="pa-sistolica" placeholder="Ex: 120" required>
                 </div>
-
                 <div class="form-group">
                     <label for="freq-cardiaca">Frequência Cardíaca (bpm)</label>
                     <input type="number" id="freq-cardiaca" placeholder="Ex: 80" required>
                 </div>
-
                 <div class="form-group">
                     <label for="freq-respiratoria">Frequência Respiratória (rpm)</label>
                     <input type="number" id="freq-respiratoria" placeholder="Ex: 16" required>
                 </div>
-
                 <div class="form-group">
                     <label for="temperatura">Temperatura (°C)</label>
                     <input type="number" id="temperatura" step="0.1" placeholder="Ex: 36.5" required>
                 </div>
-
                 <div class="form-group">
                     <label for="consciencia">Nível de Consciência (AVPU)</label>
                     <select id="consciencia" required>
@@ -49,21 +43,18 @@
                         <option value="3">U - Sem Resposta</option>
                     </select>
                 </div>
-
                 <button type="submit" class="btn-calcular">Calcular Escore MEWS</button>
             </form>
-
             <div id="resultado">
-                </div>
-
+                <!-- Resultado dinâmico aparece aqui via JS -->
+            </div>
         </div>
         <a href="index.html" class="link-voltar">← Voltar para a página inicial</a>
     </main>
-
     <footer>
-        <p>&copy; 2025 Enf-Escalas.</p>
+        <p>© 2025 Enf-Escalas.</p>
     </footer>
-
     <script src="mews.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
