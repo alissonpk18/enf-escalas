@@ -5,13 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enf-Escalas - Avaliação de Delirium</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="calculadoras.css">
+       <link rel="stylesheet" href="calculadoras.css">
 </head>
 <body>
+
     <header>
         <h1>Enf-Escalas</h1>
         <p>Suas ferramentas de avaliação de enfermagem, baseadas em evidências.</p>
     </header>
+
     <main>
         <div class="escala-container">
             <div id="choice-container">
@@ -22,6 +24,7 @@
                     <button id="show-cam-icu" class="choice-btn">CAM-ICU (UTI)</button>
                 </div>
             </div>
+
             <div id="calculator-4at" style="display: none;">
                 <h3>Escala 4AT</h3>
                 <p>Teste rápido de 4 pontos para rastreio de delirium.</p>
@@ -62,6 +65,7 @@
                     </div>
                 </form>
             </div>
+
             <div id="calculator-cam-icu" style="display: none;">
                 <h3>Algoritmo CAM-ICU</h3>
                 <p>Avaliação de delirium para pacientes em Terapia Intensiva.</p>
@@ -82,14 +86,14 @@
                     </div>
                     <div class="form-group">
                         <label>3. Nível de Consciência Alterado? (Qualquer RASS diferente de 0)</label>
-                        <select id="cam-feature3">
+                         <select id="cam-feature3">
                             <option value="1">Sim</option>
                             <option value="0">Não (RASS = 0)</option>
                         </select>
                     </div>
-                    <div class="form-group">
+                     <div class="form-group">
                         <label>4. Pensamento Desorganizado?</label>
-                        <select id="cam-feature4">
+                         <select id="cam-feature4">
                             <option value="1">Sim (Errou mais de 1x nas perguntas de comando)</option>
                             <option value="0">Não</option>
                         </select>
@@ -107,11 +111,11 @@
         </div>
         <a href="index.html" class="link-voltar">← Voltar para a página inicial</a>
     </main>
+
     <footer>
-        <p>© 2025 Enf-Escalas. Desenvolvido para auxiliar profissionais da saúde...</p>
+        <p>&copy; 2025 Enf-Escalas. Desenvolvido para auxiliar profissionais da saúde...</p>
     </footer>
     
     <script src="delirium.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>

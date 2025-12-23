@@ -1,98 +1,140 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Enf-Escalas - Escala de Braden</title>
+    <title>Calculadora - Escala de Braden</title>
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="calculadoras.css">
 </head>
-<body>
-    <header>
-        <h1>Enf-Escalas</h1>
-        <p>Suas ferramentas de avaliação de enfermagem, baseadas em evidências.</p>
-    </header>
-    <main>
-        <div class="escala-container">
-            <h2>Escala de Braden</h2>
-            <p>Avalia o risco do paciente para desenvolvimento de Lesão por Pressão (LPP).</p>
-            <form id="braden-form" class="calculadora-form">
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-teal shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-arrow-left-circle me-2"></i> Voltar para Início
+            </a>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-8">
                 
-                <div class="form-group">
-                    <label for="percepcao_sensorial">1. Percepção Sensorial</label>
-                    <select id="percepcao_sensorial" name="percepcao_sensorial" required>
-                        <option value="">Selecione...</option>
-                        <option value="1">1 - Totalmente Limitado</option>
-                        <option value="2">2 - Muito Limitado</option>
-                        <option value="3">3 - Levemente Limitado</option>
-                        <option value="4">4 - Nenhuma Limitação</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="umidade">2. Umidade</label>
-                    <select id="umidade" name="umidade" required>
-                        <option value="">Selecione...</option>
-                        <option value="1">1 - Completamente Molhado</option>
-                        <option value="2">2 - Muito Molhado</option>
-                        <option value="3">3 - Ocasionalmente Molhado</option>
-                        <option value="4">4 - Raramente Molhado</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="atividade">3. Atividade</label>
-                    <select id="atividade" name="atividade" required>
-                        <option value="">Selecione...</option>
-                        <option value="1">1 - Acamado</option>
-                        <option value="2">2 - Confinado à Cadeira</option>
-                        <option value="3">3 - Deambula Ocasionalmente</option>
-                        <option value="4">4 - Deambula Frequentemente</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="mobilidade">4. Mobilidade</label>
-                    <select id="mobilidade" name="mobilidade" required>
-                        <option value="">Selecione...</option>
-                        <option value="1">1 - Completamente Imóvel</option>
-                        <option value="2">2 - Muito Limitada</option>
-                        <option value="3">3 - Levemente Limitada</option>
-                        <option value="4">4 - Nenhuma Limitação</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="nutricao">5. Nutrição</label>
-                    <select id="nutricao" name="nutricao" required>
-                        <option value="">Selecione...</option>
-                        <option value="1">1 - Muito Pobre</option>
-                        <option value="2">2 - Provavelmente Inadequada</option>
-                        <option value="3">3 - Adequada</option>
-                        <option value="4">4 - Excelente</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="friccao_cisalhamento">6. Fricção e Cisalhamento</label>
-                    <select id="friccao_cisalhamento" name="friccao_cisalhamento" required>
-                        <option value="">Selecione...</option>
-                        <option value="1">1 - Problema Presente</option>
-                        <option value="2">2 - Problema Potencial</option>
-                        <option value="3">3 - Sem Problema Aparente</option>
-                    </select>
-                </div>
-                <div class="sticky-footer-action">
-                    <button class="btn-calcular" id="calcular-braden" type="button">Calcular Risco</button>
-                </div>
-            </form>
-            <div id="resultado" style="display: none;">
-                <div id="resultado-texto">
+                <div class="card shadow border-0">
+                    <div class="card-header bg-teal text-white py-3">
+                        <h4 class="card-title mb-0 fw-bold text-center">Escala de Braden (Risco de LPP)</h4>
                     </div>
-                <button class="btn-recalcular" id="recalcular-braden" style="display: none;" type="button">Calcular Novamente</button>
+                    <div class="card-body p-4">
+                        <form id="braden-form">
+                            
+                            <div class="row g-3">
+                                <!-- 1. Percepção Sensorial -->
+                                <div class="col-md-6">
+                                    <label for="percepcao_sensorial" class="form-label fw-bold text-secondary">1. Percepção Sensorial</label>
+                                    <select class="form-select" id="percepcao_sensorial" required>
+                                        <option value="" selected disabled>Selecione...</option>
+                                        <option value="1">1 - Totalmente Limitado</option>
+                                        <option value="2">2 - Muito Limitado</option>
+                                        <option value="3">3 - Levemente Limitado</option>
+                                        <option value="4">4 - Nenhuma Limitação</option>
+                                    </select>
+                                </div>
+
+                                <!-- 2. Umidade -->
+                                <div class="col-md-6">
+                                    <label for="umidade" class="form-label fw-bold text-secondary">2. Umidade</label>
+                                    <select class="form-select" id="umidade" required>
+                                        <option value="" selected disabled>Selecione...</option>
+                                        <option value="1">1 - Cte. Molhado</option>
+                                        <option value="2">2 - Muito Molhado</option>
+                                        <option value="3">3 - Ocasionalmente</option>
+                                        <option value="4">4 - Raramente</option>
+                                    </select>
+                                </div>
+
+                                <!-- 3. Atividade -->
+                                <div class="col-md-6">
+                                    <label for="atividade" class="form-label fw-bold text-secondary">3. Atividade</label>
+                                    <select class="form-select" id="atividade" required>
+                                        <option value="" selected disabled>Selecione...</option>
+                                        <option value="1">1 - Acamado</option>
+                                        <option value="2">2 - Confinado à Cadeira</option>
+                                        <option value="3">3 - Deambula Ocasionalmente</option>
+                                        <option value="4">4 - Deambula Frequentemente</option>
+                                    </select>
+                                </div>
+
+                                <!-- 4. Mobilidade -->
+                                <div class="col-md-6">
+                                    <label for="mobilidade" class="form-label fw-bold text-secondary">4. Mobilidade</label>
+                                    <select class="form-select" id="mobilidade" required>
+                                        <option value="" selected disabled>Selecione...</option>
+                                        <option value="1">1 - Completamente Imóvel</option>
+                                        <option value="2">2 - Muito Limitada</option>
+                                        <option value="3">3 - Levemente Limitada</option>
+                                        <option value="4">4 - Nenhuma Limitação</option>
+                                    </select>
+                                </div>
+
+                                <!-- 5. Nutrição -->
+                                <div class="col-md-6">
+                                    <label for="nutricao" class="form-label fw-bold text-secondary">5. Nutrição</label>
+                                    <select class="form-select" id="nutricao" required>
+                                        <option value="" selected disabled>Selecione...</option>
+                                        <option value="1">1 - Muito Pobre</option>
+                                        <option value="2">2 - Provavelmente Inadequada</option>
+                                        <option value="3">3 - Adequada</option>
+                                        <option value="4">4 - Excelente</option>
+                                    </select>
+                                </div>
+
+                                <!-- 6. Fricção e Cisalhamento -->
+                                <div class="col-md-6">
+                                    <label for="friccao_cisalhamento" class="form-label fw-bold text-secondary">6. Fricção e Cisalhamento</label>
+                                    <select class="form-select" id="friccao_cisalhamento" required>
+                                        <option value="" selected disabled>Selecione...</option>
+                                        <option value="1">1 - Problema Presente</option>
+                                        <option value="2">2 - Problema Potencial</option>
+                                        <option value="3">3 - Sem Problema Aparente</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="button" id="calcular-braden" class="btn btn-teal w-100 btn-lg text-white fw-bold shadow-sm mt-4" style="background-color: var(--bs-teal);">
+                                Calcular Risco
+                            </button>
+                        </form>
+
+                        <!-- Resultado -->
+                        <div id="resultado" class="mt-4 text-center" style="display: none;">
+                             <!-- The JS will likely use innerHTML on this, so detailed structure might be lost if I put it here.
+                                  However, braden.js likely does: resultado.innerHTML = "..."
+                                  I will provide a container. -->
+                             <div class="alert alert-secondary" role="alert" id="resultado-alert-box">
+                                <span id="resultado-texto"></span>
+                             </div>
+                             <button type="button" class="btn btn-outline-secondary btn-sm mt-2" id="recalcular-braden" style="display: none;">Calcular Novamente</button>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <p class="text-muted small">&copy; 2025 Enf-Escalas</p>
+                </div>
+
             </div>
         </div>
-        <a class="link-voltar" href="index.html">← Voltar para a página inicial</a>
     </main>
-    <footer>
-        © 2025 Enf-Escalas. Desenvolvido para auxiliar profissionais da saúde...
-    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="braden.js"></script>
-    <script src="script.js"></script>
 </body>
 </html>

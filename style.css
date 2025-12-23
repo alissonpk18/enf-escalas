@@ -1,8 +1,71 @@
 /* ==========================================================================
-   1. Variáveis, Reset e Estilos Globais
+   Enf-Escalas - Custom Bootstrap Overrides
+   ========================================================================== */
+
+:root {
+  --bs-teal: #008080;
+  --bs-teal-rgb: 0, 128, 128;
+}
+
+/* Custom Backgrounds & Text Colors */
+.bg-teal {
+  background-color: var(--bs-teal) !important;
+}
+
+.text-teal {
+  color: var(--bs-teal) !important;
+}
+
+/* Hover Effect for Cards */
+.hover-effect {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.hover-effect:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Stretched Link Focus Fix */
+.stretched-link:focus-visible {
+  outline: 3px solid var(--bs-teal);
+  border-radius: 5px;
+}
+
+/* Navbar Tweaks */
+.navbar-brand {
+  font-size: 1.5rem;
+}
+
+/* Dark Mode Overrides (Bootstrap 5.3 handles most automatically, but we can tweak) */
+[data-bs-theme="dark"] body {
+  background-color: #0f172a; /* Darker blue-grey background */
+}
+
+[data-bs-theme="dark"] .bg-light {
+  background-color: #1e293b !important; /* Lighter dark for footer */
+}
+
+[data-bs-theme="dark"] .card {
+  background-color: #1e293b;
+  border-color: #334155;
+}
+
+[data-bs-theme="dark"] .text-secondary {
+  color: #94a3b8 !important;
+}
+
+/* Modal Tweaks */
+.modal-header .btn-close {
+  padding: 0.5rem;
+  margin: -0.5rem -0.5rem -0.5rem auto;
+}
+
+/* ==========================================================================
+   LEGACY COMPATIBILITY LAYER (For pages not yet upgraded to Bootstrap)
    ========================================================================== */
 :root {
-    --cor-primaria: #008080;
+    --cor-primaria: var(--bs-teal);
     --cor-primaria-escura: #006666;
     --cor-foco: #009999;
     --cor-fundo: #f0f4f8;
@@ -11,215 +74,60 @@
     --cor-sombra: rgba(26, 32, 44, 0.08);
 }
 
-body.dark-mode {
-    --cor-fundo: #1a202c;
-    --cor-card: #2d3748;
-    --cor-texto: #e2e8f0;
-    --cor-sombra: rgba(0, 0, 0, 0.25);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 100%;
-}
-
-body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    line-height: 1.6;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-/* ==========================================================================
-   2. Layout Principal e Cabeçalho
-   ========================================================================== */
-header {
-    background-color: var(--cor-card);
-    padding: 1rem 1.5rem;
-    box-shadow: 0 2px 5px var(--cor-sombra);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 1.5rem;
-    color: var(--cor-primaria);
-}
-header p {
-    margin: 0;
-    font-size: 0.9rem;
-    flex-basis: 100%;
-}
-
-.header-controls {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-#search-box {
-    padding: 0.6rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: var(--cor-fundo);
-    color: var(--cor-texto);
-    min-width: 180px;
-}
-#search-box:focus-visible {
-    outline: 2px solid var(--cor-foco);
-}
-
-#dark-mode-toggle {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--cor-texto);
-}
-
-main {
-    padding: 1.5rem;
-}
-
-footer {
-    text-align: center;
-    padding: 2rem 1rem;
-    margin-top: 1rem;
-    font-size: 0.8rem;
-    color: #6c757d;
-}
-
-/* ==========================================================================
-   3. Grade de Escalas
-   ========================================================================== */
-.escala-grid {
-    display: grid;
-    grid-template-columns: 1fr; /* Mobile-first: uma coluna */
-    gap: 1.5rem;
-}
-
-.escala-card {
+/* Only apply these if NOT using Bootstrap classes to avoid conflicts. */
+.escala-container, .calculadora-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
     background-color: var(--cor-card);
     border-radius: 8px;
     box-shadow: 0 4px 8px var(--cor-sombra);
-    padding: 1.5rem;
-    text-decoration: none;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    position: relative;
+    color: var(--cor-texto); /* Ensure text color is applied */
+}
+
+/* Fallback for body if not using bootstrap's body */
+body:not([class*="bg-"]) { 
+    background-color: var(--cor-fundo);
     color: var(--cor-texto);
-}
-.escala-card:hover, .escala-card:focus-within {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px var(--cor-sombra);
+    font-family: system-ui, -apple-system, sans-serif;
 }
 
-.card-link {
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    z-index: 1;
-    border-radius: 8px; /* Para o foco ficar correto */
-}
-.card-link:focus-visible {
-    outline: 3px solid var(--cor-foco);
-}
-
-.escala-card h2 {
-    margin: 0 0 0.5rem;
-    color: var(--cor-primaria);
-}
-.escala-card p {
-    margin: 0;
-}
-
-.info-btn {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    z-index: 2; /* Acima do link do card */
-    background-color: var(--cor-primaria);
-    color: white;
-    border: none;
-    border-radius: 50%;
-    width: 28px;
-    height: 28px;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.info-btn:focus-visible {
-    outline: 3px solid var(--cor-foco);
-}
-
-hr.section-divider {
-    border: none;
-    border-top: 1px solid #ccc;
-    margin: 2rem 0;
-}
-
-/* ==========================================================================
-   4. Modal de Informações
-   ========================================================================== */
-.modal-overlay {
-    position: fixed;
-    top: 0; left: 0;
+.btn-calcular {
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
     padding: 1rem;
-}
-.modal-content {
-    background-color: var(--cor-card);
-    padding: 2rem;
-    border-radius: 8px;
-    max-width: 600px;
-    width: 100%;
-    position: relative;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-.modal-close {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
+    font-size: 1.2rem;
+    color: white;
+    background-color: var(--cor-primaria);
     border: none;
-    font-size: 2rem;
-    color: var(--cor-texto);
+    border-radius: 4px;
     cursor: pointer;
+    margin-top: 1rem;
 }
-#modal-body h3 { color: var(--cor-primaria); margin-bottom: 1rem; }
-#modal-body p { margin-bottom: 1rem; }
+.btn-calcular:hover {
+    opacity: 0.9;
+}
 
-/* ==========================================================================
-   5. Media Queries (Telas Maiores)
-   ========================================================================== */
-@media (min-width: 768px) {
-    header {
-        flex-wrap: nowrap;
-    }
-    header p {
-        flex-basis: auto;
-    }
-    .escala-grid {
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    }
+.form-group {
+    margin-bottom: 1rem;
+}
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.form-group select, .form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+}
+.link-voltar {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: bold;
 }

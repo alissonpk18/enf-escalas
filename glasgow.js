@@ -1,50 +1,54 @@
-// Aguarda o conteúdo da página carregar completamente antes de executar o script
 document.addEventListener('DOMContentLoaded', function() {
-
-    // Pega os elementos do formulário e do local de resultado
     const form = document.getElementById('glasgow-form');
-    const resultadoDiv = document.getElementById('resultado');
+    // Outer container for visibility control
+    const resultadoContainer = document.getElementById('resultado');
+    // Alert info
+    const scoreDisplay = document.getElementById('score-display');
+    const msgDisplay = document.getElementById('msg-display');
+    const alertBox = document.getElementById('alert-resultado');
 
-    // Adiciona um "ouvinte" para o evento de envio do formulário
+    if (!form) return;
+
     form.addEventListener('submit', function(event) {
-        // Impede que o formulário recarregue a página (comportamento padrão)
         event.preventDefault();
 
-        // Pega os valores selecionados em cada campo e converte para número
         const pontuacaoOcular = parseInt(document.getElementById('ocular').value);
         const pontuacaoVerbal = parseInt(document.getElementById('verbal').value);
         const pontuacaoMotora = parseInt(document.getElementById('motora').value);
 
-        // Soma os pontos para obter o total
-        const pontuacaoTotal = pontuacaoOcular + pontuacaoVerbal + pontuacaoMotora;
-
-        // Determina a classificação e a cor do resultado com base na pontuação
-        let classificacao = '';
-        let classeResultado = '';
-
-        if (pontuacaoTotal >= 13) {
-            classificacao = 'Trauma Leve';
-            classeResultado = 'resultado-leve';
-        } else if (pontuacaoTotal >= 9) {
-            classificacao = 'Trauma Moderado';
-            classeResultado = 'resultado-moderado';
-        } else { // pontuacaoTotal <= 8
-            classificacao = 'Trauma Grave';
-            classeResultado = 'resultado-grave';
+        if (isNaN(pontuacaoOcular) || isNaN(pontuacaoVerbal) || isNaN(pontuacaoMotora)) {
+            return; // Should be handled by 'required' attribute, but safety first
         }
 
-        // Atualiza a div de resultado com a pontuação e a classificação
-        resultadoDiv.innerHTML = `
-            <strong>Pontuação Total: ${pontuacaoTotal}</strong>
-            <p>${classificacao}</p>
-        `;
+        const pontuacaoTotal = pontuacaoOcular + pontuacaoVerbal + pontuacaoMotora;
 
-        // Remove classes de cor anteriores e adiciona a nova
-        resultadoDiv.className = ''; // Limpa classes existentes
-        resultadoDiv.classList.add(classeResultado);
+        let classificacao = '';
+        let alertClass = '';
 
-        // Torna a div de resultado visível
-        resultadoDiv.style.display = 'block';
+        // Classification Logic
+        if (pontuacaoTotal >= 13) {
+            classificacao = 'Trauma Leve';
+            alertClass = 'alert-success';
+        } else if (pontuacaoTotal >= 9) {
+            classificacao = 'Trauma Moderado';
+            alertClass = 'alert-warning';
+        } else {
+            classificacao = 'Trauma Grave';
+            alertClass = 'alert-danger';
+        }
+
+        // Update Text
+        scoreDisplay.textContent = `Pontuação Total: ${pontuacaoTotal}`;
+        msgDisplay.textContent = classificacao;
+
+        // Reset and Set Alert Class
+        alertBox.className = 'alert'; // Keep base class
+        alertBox.classList.add(alertClass);
+
+        // Show Result
+        resultadoContainer.classList.remove('d-none');
+        
+        // Scroll to result (optional, good for mobile)
+        resultadoContainer.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
     });
-
 });

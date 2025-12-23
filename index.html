@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-bs-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,117 +8,263 @@
     
     <title>Enf-Escalas - Ferramentas de Enfermagem</title>
     
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="images/icons/icon-192x192.png">
 </head>
 <body>
 
-    <header>
-        <div class="header-content">
-            <h1>Enf-Escalas</h1>
-            <p>Suas ferramentas de avaliação de enfermagem, baseadas em evidências.</p>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-teal sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <i class="bi bi-activity"></i> Enf-Escalas
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <span class="nav-link text-white-50 disabled">Ferramentas de avaliação baseadas em evidências</span>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-2">
+                    <div class="input-group">
+                        <span class="input-group-text bg-white text-muted border-end-0"><i class="bi bi-search"></i></span>
+                        <input class="form-control border-start-0 ps-0" type="search" id="search-box" placeholder="Buscar escala..." aria-label="Search">
+                    </div>
+                    <button id="dark-mode-toggle" class="btn btn-outline-light border-0" aria-label="Alternar modo noturno">
+                        <i class="bi bi-moon-stars-fill"></i>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div class="header-controls">
-            <button id="dark-mode-toggle" aria-label="Alternar modo noturno">🌙</button>
-        </div>
-    </header>
+    </nav>
 
-    <main>
-        <section class="escala-grid">
-            <div class="escala-card" data-title="Escala de Glasgow Nível Consciência">
-                <a href="glasgow.html" class="card-link" aria-label="Abrir Escala de Glasgow"></a>
-                <h2>Escala de Glasgow</h2>
-                <p>Mede o nível de consciência.</p>
-                <button class="info-btn" data-info-id="glasgow-info" aria-label="Mais informações sobre Escala de Glasgow">i</button>
+    <main class="container py-4">
+        <!-- Section 1 -->
+        <h5 class="text-muted mb-3 border-bottom pb-2">Avaliação Geral e Neurológica</h5>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 mb-5" id="escalas-container">
+            
+            <!-- Card Glasgow -->
+            <div class="col escala-item">
+                <div class="card h-100 shadow-sm hover-effect border-0" data-title="Escala de Glasgow Nível Consciência">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title text-teal fw-bold">Escala de Glasgow</h5>
+                            <button class="btn btn-sm btn-light text-teal rounded-circle p-0" style="width: 24px; height: 24px;" data-bs-toggle="modal" data-bs-target="#infoModal" data-info-id="glasgow-info" aria-label="Info">
+                                <i class="bi bi-info-circle-fill"></i>
+                            </button>
+                        </div>
+                        <p class="card-text text-secondary">Mede o nível de consciência após lesão cerebral.</p>
+                        <a href="glasgow.html" class="stretched-link" aria-label="Abrir Escala de Glasgow"></a>
+                    </div>
+                </div>
             </div>
             
-            <div class="escala-card" data-title="Escala de Braden Lesão Pressão LPP">
-                <a href="braden.html" class="card-link" aria-label="Abrir Escala de Braden"></a>
-                <h2>Escala de Braden</h2>
-                <p>Avalia o risco para Lesão por Pressão.</p>
-                <button class="info-btn" data-info-id="braden-info" aria-label="Mais informações sobre Escala de Braden">i</button>
+            <!-- Card RASS -->
+            <div class="col escala-item">
+                <div class="card h-100 shadow-sm hover-effect border-0" data-title="Escala RASS Agitação Sedação Richmond">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title text-teal fw-bold">Escala RASS</h5>
+                            <button class="btn btn-sm btn-light text-teal rounded-circle p-0" style="width: 24px; height: 24px;" data-bs-toggle="modal" data-bs-target="#infoModal" data-info-id="rass-info" aria-label="Info">
+                                <i class="bi bi-info-circle-fill"></i>
+                            </button>
+                        </div>
+                        <p class="card-text text-secondary">Avalia o nível de agitação e sedação em pacientes.</p>
+                        <a href="rass.html" class="stretched-link" aria-label="Abrir Escala RASS"></a>
+                    </div>
+                </div>
             </div>
 
-            <div class="escala-card" data-title="Escala de Morse Risco Quedas">
-                <a href="morse.html" class="card-link" aria-label="Abrir Escala de Morse"></a>
-                <h2>Escala de Morse</h2>
-                <p>Avalia o risco de quedas.</p>
-                <button class="info-btn" data-info-id="morse-info" aria-label="Mais informações sobre Escala de Morse">i</button>
+            <!-- Card Delirium -->
+            <div class="col escala-item">
+                <div class="card h-100 shadow-sm hover-effect border-0" data-title="Avaliação de Delirium CAM-ICU 4AT UTI Enfermaria">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title text-teal fw-bold">Avaliação de Delirium</h5>
+                            <button class="btn btn-sm btn-light text-teal rounded-circle p-0" style="width: 24px; height: 24px;" data-bs-toggle="modal" data-bs-target="#infoModal" data-info-id="delirium-info" aria-label="Info">
+                                <i class="bi bi-info-circle-fill"></i>
+                            </button>
+                        </div>
+                        <p class="card-text text-secondary">Rastreio de Delirium com CAM-ICU e 4AT.</p>
+                        <a href="delirium.html" class="stretched-link" aria-label="Abrir Avaliação de Delirium"></a>
+                    </div>
+                </div>
             </div>
 
-            <div class="escala-card" data-title="Escala RASS Agitação Sedação Richmond">
-                <a href="rass.html" class="card-link" aria-label="Abrir Escala RASS"></a>
-                <h2>Escala RASS</h2>
-                <p>Avalia o nível de agitação e sedação.</p>
-                <button class="info-btn" data-info-id="rass-info" aria-label="Mais informações sobre Escala RASS">i</button>
-            </div>
-        </section>
-
-        <hr class="section-divider">
-
-        <section class="escala-grid">
-            <div class="escala-card" data-title="Escala MEWS Sinais Alerta Deterioração Clínica">
-                <a href="mews.html" class="card-link" aria-label="Abrir Escala MEWS"></a>
-                <h2>Escala MEWS</h2>
-                <p>Reconhece sinais de deterioração clínica.</p>
-                <button class="info-btn" data-info-id="mews-info" aria-label="Mais informações sobre Escala MEWS">i</button>
+            <!-- Card Dor -->
+            <div class="col escala-item">
+                <div class="card h-100 shadow-sm hover-effect border-0" data-title="Escala de Dor Intensidade Numérica Visual">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title text-teal fw-bold">Escala de Dor</h5>
+                            <button class="btn btn-sm btn-light text-teal rounded-circle p-0" style="width: 24px; height: 24px;" data-bs-toggle="modal" data-bs-target="#infoModal" data-info-id="dor-info" aria-label="Info">
+                                <i class="bi bi-info-circle-fill"></i>
+                            </button>
+                        </div>
+                        <p class="card-text text-secondary">Mensura a intensidade da dor referida.</p>
+                        <a href="dor.html" class="stretched-link" aria-label="Abrir Escala de Dor"></a>
+                    </div>
+                </div>
             </div>
 
-            <div class="escala-card" data-title="Escala de Dor Intensidade Numérica Visual">
-                <a href="dor.html" class="card-link" aria-label="Abrir Escala de Dor"></a>
-                <h2>Escala de Dor</h2>
-                <p>Mensura a intensidade da dor referida.</p>
-                <button class="info-btn" data-info-id="dor-info" aria-label="Mais informações sobre Escala de Dor">i</button>
+        </div>
+
+        <!-- Section 2 -->
+        <h5 class="text-muted mb-3 border-bottom pb-2">Risco e Segurança do Paciente</h5>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="escalas-container-2">
+
+            <!-- Card Braden -->
+            <div class="col escala-item">
+                <div class="card h-100 shadow-sm hover-effect border-0" data-title="Escala de Braden Lesão Pressão LPP">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title text-teal fw-bold">Escala de Braden</h5>
+                            <button class="btn btn-sm btn-light text-teal rounded-circle p-0" style="width: 24px; height: 24px;" data-bs-toggle="modal" data-bs-target="#infoModal" data-info-id="braden-info" aria-label="Info">
+                                <i class="bi bi-info-circle-fill"></i>
+                            </button>
+                        </div>
+                        <p class="card-text text-secondary">Avalia o risco para desenvolvimento de Lesão por Pressão.</p>
+                        <a href="braden.html" class="stretched-link" aria-label="Abrir Escala de Braden"></a>
+                    </div>
+                </div>
             </div>
 
-            <div class="escala-card" data-title="Avaliação de Delirium CAM-ICU 4AT UTI Enfermaria">
-                <a href="delirium.html" class="card-link" aria-label="Abrir Avaliação de Delirium"></a>
-                <h2>Avaliação de Delirium</h2>
-                <p>Rastreio com CAM-ICU e 4AT.</p>
-                <button class="info-btn" data-info-id="delirium-info" aria-label="Mais informações sobre Avaliação de Delirium">i</button>
+            <!-- Card Morse -->
+            <div class="col escala-item">
+                <div class="card h-100 shadow-sm hover-effect border-0" data-title="Escala de Morse Risco Quedas">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title text-teal fw-bold">Escala de Morse</h5>
+                            <button class="btn btn-sm btn-light text-teal rounded-circle p-0" style="width: 24px; height: 24px;" data-bs-toggle="modal" data-bs-target="#infoModal" data-info-id="morse-info" aria-label="Info">
+                                <i class="bi bi-info-circle-fill"></i>
+                            </button>
+                        </div>
+                        <p class="card-text text-secondary">Avalia o risco de quedas em pacientes.</p>
+                        <a href="morse.html" class="stretched-link" aria-label="Abrir Escala de Morse"></a>
+                    </div>
+                </div>
             </div>
 
-            <div class="escala-card" data-title="Índice de Katz Atividades Diárias AVD">
-                <a href="katz.html" class="card-link" aria-label="Abrir Índice de Katz"></a>
-                <h2>Índice de Katz</h2>
-                <p>Avalia a capacidade para atividades diárias.</p>
-                <button class="info-btn" data-info-id="katz-info" aria-label="Mais informações sobre Índice de Katz">i</button>
+            <!-- Card MEWS -->
+            <div class="col escala-item">
+                <div class="card h-100 shadow-sm hover-effect border-0" data-title="Escala MEWS Sinais Alerta Deterioração Clínica">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title text-teal fw-bold">Escala MEWS</h5>
+                            <button class="btn btn-sm btn-light text-teal rounded-circle p-0" style="width: 24px; height: 24px;" data-bs-toggle="modal" data-bs-target="#infoModal" data-info-id="mews-info" aria-label="Info">
+                                <i class="bi bi-info-circle-fill"></i>
+                            </button>
+                        </div>
+                        <p class="card-text text-secondary">Escore de Alerta Precoce Modificado para deterioração.</p>
+                        <a href="mews.html" class="stretched-link" aria-label="Abrir Escala MEWS"></a>
+                    </div>
+                </div>
             </div>
-            
-            <div class="escala-card" data-title="Índice de Charlson Prognóstico Comorbidades">
-                <a href="charlson.html" class="card-link" aria-label="Abrir Índice de Charlson"></a>
-                <h2>Índice de Charlson</h2>
-                <p>Avalia o prognóstico baseado em comorbidades.</p>
-                <button class="info-btn" data-info-id="charlson-info" aria-label="Mais informações sobre Índice de Charlson">i</button>
+
+            <!-- Card Katz -->
+            <div class="col escala-item">
+                <div class="card h-100 shadow-sm hover-effect border-0" data-title="Índice de Katz Atividades Diárias AVD">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title text-teal fw-bold">Índice de Katz</h5>
+                            <button class="btn btn-sm btn-light text-teal rounded-circle p-0" style="width: 24px; height: 24px;" data-bs-toggle="modal" data-bs-target="#infoModal" data-info-id="katz-info" aria-label="Info">
+                                <i class="bi bi-info-circle-fill"></i>
+                            </button>
+                        </div>
+                        <p class="card-text text-secondary">Avalia a independência para atividades da vida diária.</p>
+                        <a href="katz.html" class="stretched-link" aria-label="Abrir Índice de Katz"></a>
+                    </div>
+                </div>
             </div>
-        </section>
+
+            <!-- Card Charlson -->
+            <div class="col escala-item">
+                <div class="card h-100 shadow-sm hover-effect border-0" data-title="Índice de Charlson Prognóstico Comorbidades">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-start mb-2">
+                            <h5 class="card-title text-teal fw-bold">Índice de Charlson</h5>
+                            <button class="btn btn-sm btn-light text-teal rounded-circle p-0" style="width: 24px; height: 24px;" data-bs-toggle="modal" data-bs-target="#infoModal" data-info-id="charlson-info" aria-label="Info">
+                                <i class="bi bi-info-circle-fill"></i>
+                            </button>
+                        </div>
+                        <p class="card-text text-secondary">Prediz mortalidade baseada em comorbidades.</p>
+                        <a href="charlson.html" class="stretched-link" aria-label="Abrir Índice de Charlson"></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2025 Enf-Escalas. Ferramenta de apoio à prática clínica para profissionais qualificados.</p>
+    <footer class="bg-light text-center py-4 mt-auto border-top">
+        <div class="container">
+            <p class="text-muted mb-0 small">&copy; 2025 Enf-Escalas. Ferramenta de apoio à prática clínica para profissionais qualificados.</p>
+        </div>
     </footer>
 
-    <div id="info-modal" class="modal-overlay" aria-modal="true" role="dialog" style="display: none;">
+    <!-- Bootstrap Modal -->
+    <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
-            <button id="modal-close-btn" class="modal-close" aria-label="Fechar">&times;</button>
-            <div id="modal-body"></div>
+          <div class="modal-header border-0 pb-0">
+            <h1 class="modal-title fs-5 fw-bold text-teal" id="infoModalLabel">Informações</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body" id="modal-body">
+            <!-- Content will be injected by JS -->
+          </div>
+          <div class="modal-footer border-0 pt-0">
+            <button type="button" class="btn btn-light btn-sm" data-bs-dismiss="modal">Fechar</button>
+          </div>
         </div>
+      </div>
     </div>
     
-    <div id="info-content" style="display: none;">
+    <!-- Hidden Content for Modal Injection -->
+    <div id="info-content" class="d-none">
         <div id="glasgow-info">
-            <h3>Sobre a Escala de Glasgow</h3>
-            <p>A Escala de Coma de Glasgow é uma ferramenta neurológica que visa medir o nível de consciência de uma pessoa após uma lesão cerebral aguda.</p>
-            <p><strong>Referência:</strong> Teasdale G, Jennett B. ASSESSMENT OF COMA AND IMPAIRED CONSCIOUSNESS. A practical scale. The Lancet. 1974;304(7872):81-84.</p>
+            <p>A <strong>Escala de Coma de Glasgow</strong> é utilizada para avaliar o nível de consciência de um paciente após trauma cranioencefálico, baseando-se na resposta ocular, verbal e motora.</p>
+            <small class="text-muted d-block mt-2"><strong>Referência:</strong> Teasdale G, Jennett B. ASSESSMENT OF COMA AND IMPAIRED CONSCIOUSNESS. The Lancet. 1974.</small>
         </div>
         <div id="braden-info">
-            <h3>Sobre a Escala de Braden</h3>
-            <p>A Escala de Braden é uma ferramenta utilizada para avaliar o risco de um paciente desenvolver lesões por pressão.</p>
-            <p><strong>Referência:</strong> Bergstrom N, Braden BJ, Laguzza A, Holman V. The Braden Scale for Predicting Pressure Sore Risk. Nursing Research. 1987;36(4):205-210.</p>
+            <p>A <strong>Escala de Braden</strong> avalia o risco de desenvolvimento de úlceras por pressão, considerando percepção sensorial, umidade, atividade, mobilidade, nutrição e fricção/cisalhamento.</p>
+            <small class="text-muted d-block mt-2"><strong>Referência:</strong> Bergstrom N et al. The Braden Scale for Predicting Pressure Sore Risk. Nursing Research. 1987.</small>
         </div>
+        <div id="morse-info">
+            <p>A <strong>Escala de Morse</strong> é uma ferramenta rápida e simples para avaliar a probabilidade de um paciente cair.</p>
         </div>
+        <div id="rass-info">
+            <p>A <strong>Escala RASS</strong> (Richmond Agitation-Sedation Scale) é usada para avaliar o grau de sedação e agitação em pacientes internados.</p>
+        </div>
+        <div id="mews-info">
+            <p>A <strong>Escala MEWS</strong> (Modified Early Warning Score) auxilia na identificação precoce da deterioração clínica de pacientes hospitalizados.</p>
+        </div>
+        <div id="dor-info">
+            <p>A <strong>Escala Numérica de Dor</strong> permite que o paciente quantifique sua dor em uma escala de 0 a 10.</p>
+        </div>
+        <div id="delirium-info">
+            <p>Ferramentas como <strong>CAM-ICU</strong> e <strong>4AT</strong> são padrões ouro para rastreio de Delirium.</p>
+        </div>
+        <div id="katz-info">
+            <p>O <strong>Índice de Katz</strong> avalia a capacidade funcional do indivíduo para realizar AVDs (Atividades de Vida Diária).</p>
+        </div>
+        <div id="charlson-info">
+            <p>O <strong>Índice de Comorbidade de Charlson</strong> prevê o risco de mortalidade em dez anos para pacientes com múltiplas comorbidades.</p>
+        </div>
+    </div>
 
+    <!-- Bootstrap 5.3 JS Bundle (includes Popper) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
